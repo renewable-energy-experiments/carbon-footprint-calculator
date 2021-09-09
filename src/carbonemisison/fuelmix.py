@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import datetime
 import glob
-
+import os
 from power_utilities.NamedLists import column_list_Mwh, column_list_power
 
 
@@ -13,11 +13,13 @@ class Fuelmix:
 
     def utility_fuelmix(self):
         dfwhole = pd.DataFrame()
-        filenames = glob.glob('../dataset/' + self.region + '2020/*.csv')
-        print(filenames)
+
+        dirname = os.path.dirname(__file__)
+        filname= os.path.join(dirname, '../../dataset/' + self.region + '2020/*.csv')
+        print(filname)
+        filenames = glob.glob(filname)
         # filenames.sort()
         for a in filenames:
-            print(a)
             temp = pd.read_csv(a)
             # temp.rename(columns=temp.iloc[0], inplace = True)
             format = '%Y-%m-%d %H:%M:%S'

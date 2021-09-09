@@ -1,5 +1,28 @@
 # carbon-footprint-calculator
 
+[![Carbonfootprint Latest PY Release](https://img.shields.io/badge/carbonfootprint-latest%20release-pink)](https://pypi.org/project/carbonfootprint/)
+[![Carbonfootprint Latest Anaconda Release](
+https://anaconda.org/altanai/carbonfootprint/badges/version.svg)](https://anaconda.org/altanai/carbonfootprint)
+
+
+[![Carbonfootprint Status](https://img.shields.io/badge/status-stable-brightgreen)](https://pypi.org/project/carbonfootprint/#history)
+[![License](https://img.shields.io/github/license/renewable-energy-experiments/carbon-footprint-calculator)](https://github.com/renewable-energy-experiments/carbon-footprint-calculator/blob/main/LICENSE)
+[![Issues](https://img.shields.io/github/issues/renewable-energy-experiments/carbon-footprint-calculator)](https://github.com/renewable-energy-experiments/carbon-footprint-calculator/issues)
+
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Frenewable-energy-experiments%2Fcarbon-footprint-calculator
+)](https://twitter.com/altanai)
+[![Stars](https://img.shields.io/github/stars/renewable-energy-experiments/carbon-footprint-calculator)](https://github.com/renewable-energy-experiments/carbon-footprint-calculator/stargazers)
+
+## Conda distribution
+
+    ~/anaconda3/bin/conda install anaconda-client conda-build
+    ~/anaconda3/bin/conda config --set anaconda_upload no
+    ~/anaconda3/bin/conda build . --output
+
+    ~/anaconda3/bin/anaconda login
+    ~/anaconda3/bin/anaconda upload dist/carbonfootprint-1.1.5.tar.gz
+    
+## PYppi ditribution 
 
 **1. Generating distribution archives**
 
@@ -22,7 +45,7 @@ Install twine and upload all of the archives under dist to pypi’s test server
     
 or to pyapi
     
-    twine upload dist/*
+    python3 -m twine upload dist/*
     
 **3.Installing the package**
 
@@ -52,4 +75,14 @@ Activate virtual env
 Run unit tests 
 
     python tests/unittests.py
-    
+ 
+ 
+## Debugging and Help
+ 
+**Issue1** Adding csv for the datasets 
+
+**solution** refer to https://python-packaging.readthedocs.io/en/latest/non-code-files.html 
+Add the following to dynamic setup.py 
+
+    include_package_data=True
+    package_data={'': ['dataset/*']},

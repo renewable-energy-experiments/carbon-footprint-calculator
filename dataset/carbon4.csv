@@ -1,0 +1,13 @@
+Fuel Type,Lifecycle emissions ( kgCO2eq/MWh),Lifecycle emissions ( gCO2eq/Wh)
+Nuclear,12,0.012
+Wind,12,0.012
+Hydro,24,0.024
+Other,24,0.024
+Geothermal,38,0.038
+Solar,48,0.048
+Battery,59,0.059
+Biomass,230,0.23
+Imports,428,0.428
+Natural gas,490,0.49
+Petroleum,490,0.49
+Coal,820,0.82
